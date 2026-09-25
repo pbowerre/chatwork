@@ -161,10 +161,7 @@ function App() {
           <div className="pt-6 flex justify-center z-20 w-full shrink-0 relative">
             <div className="flex p-1 bg-[#111524] border border-white/10 rounded-full shadow-2xl">
               <button
-                onClick={() => {
-                  setPlatform('ios');
-                  setAppStyle('imessage');
-                }}
+                onClick={() => setPlatform('ios')}
                 className={`flex items-center gap-2 px-6 py-2 rounded-full text-xs font-semibold transition-all ${
                   state.platform === 'ios'
                     ? 'bg-teal-500/20 text-teal-400 shadow-sm ring-1 ring-teal-500/50'
@@ -175,10 +172,7 @@ function App() {
                 iPhone
               </button>
               <button
-                onClick={() => {
-                  setPlatform('android');
-                  setAppStyle('whatsapp');
-                }}
+                onClick={() => setPlatform('android')}
                 className={`flex items-center gap-2 px-6 py-2 rounded-full text-xs font-semibold transition-all ${
                   state.platform === 'android'
                     ? 'bg-teal-500/20 text-teal-400 shadow-sm ring-1 ring-teal-500/50'

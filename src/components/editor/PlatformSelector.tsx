@@ -3,11 +3,30 @@ import type { Device } from '../../types/chat';
 import { Minus, Plus, Lightbulb, X } from 'lucide-react';
 
 export default function PlatformSelector() {
-  const { state, setDevice, setBackground, setZoom } = useChatState();
+  const { state, setDevice, setBackground, setZoom, setAppStyle } = useChatState();
   const currentZoom = state.zoom ?? 0;
 
   return (
     <div className="flex flex-col h-full space-y-5 animate-in fade-in duration-500 pb-4">
+      {/* APP STYLE */}
+      <section className="space-y-2">
+        <h2 className="text-[9px] font-bold text-slate-400 uppercase tracking-widest pl-1">App Style</h2>
+        <div className="flex bg-[#111524] p-1 rounded-lg border border-white/5 shadow-sm">
+          <button 
+            onClick={() => setAppStyle('imessage')}
+            className={`flex-1 py-1.5 text-xs font-semibold rounded-md transition-all ${state.appStyle === 'imessage' ? 'bg-teal-500/20 text-teal-400 shadow-sm ring-1 ring-teal-500/50' : 'text-slate-500 hover:text-slate-300'}`}
+          >
+            iMessage
+          </button>
+          <button 
+            onClick={() => setAppStyle('whatsapp')}
+            className={`flex-1 py-1.5 text-xs font-semibold rounded-md transition-all ${state.appStyle === 'whatsapp' ? 'bg-teal-500/20 text-teal-400 shadow-sm ring-1 ring-teal-500/50' : 'text-slate-500 hover:text-slate-300'}`}
+          >
+            WhatsApp
+          </button>
+        </div>
+      </section>
+
       {/* DEVICE */}
       <section className="space-y-2">
         <h2 className="text-[9px] font-bold text-slate-400 uppercase tracking-widest pl-1">Device</h2>
