@@ -72,7 +72,7 @@ export default function MessageEditor() {
            </button>
            <button 
              onClick={() => setSender('me')} 
-             className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all ${sender === 'me' ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-sm ring-1 ring-white/10' : 'text-slate-500 hover:text-slate-300'}`}
+             className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all ${sender === 'me' ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-sm ring-1 ring-white/10' : 'text-slate-500 hover:text-slate-300'}`}
            >
              Me
            </button>
@@ -83,7 +83,7 @@ export default function MessageEditor() {
       <button 
         onClick={handleAddText} 
         disabled={!newMessageText.trim()}
-        className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full py-3 rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-lg shadow-teal-500/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <Send className="w-4 h-4" /> Add Message
       </button>
@@ -110,7 +110,7 @@ export default function MessageEditor() {
                      {msg.sender === 'them' && state.profile.avatar ? (
                         <img src={state.profile.avatar} alt="" className="w-full h-full object-cover" />
                      ) : (
-                        <div className="w-full h-full flex items-center justify-center text-[10px] font-bold text-white bg-blue-600">
+                        <div className="w-full h-full flex items-center justify-center text-[10px] font-bold text-white bg-teal-600">
                           {msg.sender === 'me' ? 'M' : 'T'}
                         </div>
                      )}

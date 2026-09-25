@@ -64,28 +64,28 @@ export default function PlatformSelector() {
           <div className="flex items-center justify-between px-1">
             <button 
               onClick={() => setBackground('transparent')}
-              className={`w-7 h-7 rounded-full border-[1.5px] transition-all flex items-center justify-center ${state.background === 'transparent' ? 'border-blue-500' : 'border-transparent'}`}
+              className={`w-7 h-7 rounded-full border-[1.5px] transition-all flex items-center justify-center ${state.background === 'transparent' ? 'border-teal-500' : 'border-transparent'}`}
             >
               <div className="w-5 h-5 rounded-full border border-white/10" style={{ backgroundImage: 'linear-gradient(45deg, #1e243b 25%, transparent 25%), linear-gradient(-45deg, #1e243b 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #1e243b 75%), linear-gradient(-45deg, transparent 75%, #1e243b 75%)', backgroundSize: '6px 6px', backgroundPosition: '0 0, 0 3px, 3px -3px, -3px 0px' }} />
             </button>
             
             <button 
               onClick={() => setBackground('black')}
-              className={`w-7 h-7 rounded-full border-[1.5px] transition-all flex items-center justify-center ${state.background === 'black' ? 'border-blue-500' : 'border-transparent'}`}
+              className={`w-7 h-7 rounded-full border-[1.5px] transition-all flex items-center justify-center ${state.background === 'black' ? 'border-teal-500' : 'border-transparent'}`}
             >
               <div className="w-5 h-5 rounded-full bg-black border border-white/10" />
             </button>
             
             <button 
               onClick={() => setBackground('white')}
-              className={`w-7 h-7 rounded-full border-[1.5px] transition-all flex items-center justify-center ${state.background === 'white' ? 'border-blue-500' : 'border-transparent'}`}
+              className={`w-7 h-7 rounded-full border-[1.5px] transition-all flex items-center justify-center ${state.background === 'white' ? 'border-teal-500' : 'border-transparent'}`}
             >
               <div className="w-5 h-5 rounded-full bg-white border border-white/10" />
             </button>
 
             <button 
               onClick={() => setBackground('gradient')}
-              className={`w-7 h-7 rounded-full border-[1.5px] transition-all flex items-center justify-center ${state.background === 'gradient' ? 'border-blue-500' : 'border-transparent'}`}
+              className={`w-7 h-7 rounded-full border-[1.5px] transition-all flex items-center justify-center ${state.background === 'gradient' ? 'border-teal-500' : 'border-transparent'}`}
             >
               <div className="w-5 h-5 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 border border-white/10" />
             </button>
@@ -117,8 +117,8 @@ export default function PlatformSelector() {
           <X className="w-3 h-3" />
         </button>
         <div className="flex items-center gap-1.5 mb-1.5">
-          <Lightbulb className="w-3 h-3 text-blue-400" />
-          <h3 className="text-[9px] font-bold text-blue-400 tracking-wide">Tip</h3>
+          <Lightbulb className="w-3 h-3 text-teal-400" />
+          <h3 className="text-[9px] font-bold text-teal-400 tracking-wide">Tip</h3>
         </div>
         <p className="text-[9px] text-slate-400 leading-relaxed">
           Drag messages to reorder.<br/>Changes are saved automatically.

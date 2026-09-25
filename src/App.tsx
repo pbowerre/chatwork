@@ -31,7 +31,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen bg-[#0b0f1a] text-white overflow-hidden font-sans selection:bg-blue-500/30">
+    <div className="flex flex-col h-screen bg-[#0b0f1a] text-white overflow-hidden font-sans selection:bg-teal-500/30">
       {/* Header */}
       <header className="flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-3 bg-[#111524]/80 backdrop-blur-md border-b border-white/5 shrink-0 z-30 gap-3 md:gap-0">
         <div className="flex items-center gap-6 w-full md:w-auto justify-between md:justify-start">
@@ -49,7 +49,7 @@ function App() {
           <div className="flex items-center gap-2 text-xs font-medium text-slate-400 shrink-0">
             {isSaving ? (
               <>
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                <div className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse" />
                 <span>Saving...</span>
               </>
             ) : (
@@ -76,7 +76,7 @@ function App() {
           <button 
             onClick={handleExport}
             disabled={isExporting}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-lg shadow-lg shadow-blue-500/20 transition-all disabled:opacity-50 shrink-0"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 rounded-lg shadow-lg shadow-teal-500/20 transition-all disabled:opacity-50 shrink-0"
           >
             {isExporting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
             Export
@@ -90,7 +90,7 @@ function App() {
         
         {/* Thin Left Navigation */}
         <aside className="hidden lg:flex w-[72px] bg-[#111524] border-r border-white/5 flex-col items-center py-4 gap-2 shrink-0 z-20">
-          <button className="flex flex-col items-center gap-1 p-2 w-14 rounded-lg bg-white/5 text-blue-400">
+          <button className="flex flex-col items-center gap-1 p-2 w-14 rounded-lg bg-white/5 text-teal-400">
             <User className="w-4 h-4" />
             <span className="text-[9px] font-medium">Profile</span>
           </button>
@@ -150,8 +150,8 @@ function App() {
         <div className="w-full lg:flex-1 flex flex-col relative overflow-hidden bg-[#0b0f1a] min-h-[650px] lg:min-h-0 shrink-0 lg:shrink">
           {/* Subtle glow behind phone */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-[800px] h-[800px] bg-blue-600/10 blur-[120px] rounded-full" />
-            <div className="absolute w-[500px] h-[500px] bg-purple-600/10 blur-[100px] rounded-full translate-x-20 -translate-y-20" />
+            <div className="w-[800px] h-[800px] bg-teal-600/10 blur-[120px] rounded-full" />
+            <div className="absolute w-[500px] h-[500px] bg-emerald-600/10 blur-[100px] rounded-full translate-x-20 -translate-y-20" />
           </div>
 
           {/* Platform Toggle */}
