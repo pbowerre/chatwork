@@ -38,6 +38,7 @@ export const defaultState: ChatState = {
   device: 'iphone-15',
   background: 'transparent',
   customBackgroundColor: '#ffffff',
+  zoom: 0,
   settings: {
     showSignal: true,
     showWifi: true,

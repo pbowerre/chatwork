@@ -20,7 +20,9 @@ export default function PreviewPanel() {
       <div 
         className="relative transition-all duration-300 shrink-0 flex items-center justify-center"
         style={{ 
-          transform: 'scale(min(1, calc((100vh - 220px) / 600)))', 
+          transform: (state.zoom ?? 0) === 0 
+            ? 'scale(min(1, calc((100vh - 220px) / 600)))' 
+            : `scale(${(state.zoom ?? 0) / 100})`, 
           transformOrigin: 'center center'
         }}
       >

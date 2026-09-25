@@ -3,7 +3,8 @@ import type { Device } from '../../types/chat';
 import { Minus, Plus, Lightbulb, X } from 'lucide-react';
 
 export default function PlatformSelector() {
-  const { state, setDevice, setBackground } = useChatState();
+  const { state, setDevice, setBackground, setZoom } = useChatState();
+  const currentZoom = state.zoom ?? 0;
 
   return (
     <div className="flex flex-col h-full space-y-5 animate-in fade-in duration-500 pb-4">
@@ -43,15 +44,26 @@ export default function PlatformSelector() {
         <h2 className="text-[9px] font-bold text-slate-400 uppercase tracking-widest pl-1">Zoom</h2>
         <div className="flex items-center gap-2">
           <div className="flex-1 bg-[#111524] rounded-lg border border-white/5 shadow-sm flex items-center justify-between p-1">
-            <button className="w-6 h-6 flex items-center justify-center rounded-md hover:bg-white/5 text-slate-400 transition-colors">
+            <button 
+              onClick={() => setZoom(currentZoom === 0 ? 90 : Math.max(10, currentZoom - 10))}
+              className="w-6 h-6 flex items-center justify-center rounded-md hover:bg-white/5 text-slate-400 transition-colors"
+            >
               <Minus className="w-3 h-3" />
             </button>
-            <span className="text-[10px] font-medium text-slate-200">100%</span>
-            <button className="w-6 h-6 flex items-center justify-center rounded-md hover:bg-white/5 text-slate-400 transition-colors">
+            <span className="text-[10px] font-medium text-slate-200">
+              {currentZoom === 0 ? 'Fit' : `${currentZoom}%`}
+            </span>
+            <button 
+              onClick={() => setZoom(currentZoom === 0 ? 110 : Math.min(200, currentZoom + 10))}
+              className="w-6 h-6 flex items-center justify-center rounded-md hover:bg-white/5 text-slate-400 transition-colors"
+            >
               <Plus className="w-3 h-3" />
             </button>
           </div>
-          <button className="px-3 py-1.5 h-8 bg-[#111524] rounded-lg border border-white/5 text-[10px] font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors shadow-sm">
+          <button 
+            onClick={() => setZoom(0)}
+            className="px-3 py-1.5 h-8 bg-[#111524] rounded-lg border border-white/5 text-[10px] font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors shadow-sm"
+          >
             Fit
           </button>
         </div>

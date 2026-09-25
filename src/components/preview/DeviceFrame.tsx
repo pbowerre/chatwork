@@ -10,8 +10,8 @@ export default function DeviceFrame() {
     <div 
       className={`relative overflow-hidden bg-white transition-all duration-300 flex flex-col ${
         isIos 
-          ? 'w-[320px] h-[540px] rounded-[3rem] border-[8px] border-[#0a0a0a]' 
-          : 'w-[320px] h-[540px] rounded-[2.5rem] border-[6px] border-[#0a0a0a]'
+          ? 'w-[340px] h-[620px] rounded-[3rem] border-[8px] border-[#0a0a0a]' 
+          : 'w-[340px] h-[620px] rounded-[2.5rem] border-[6px] border-[#0a0a0a]'
       }`}
     >
       {/* Device specific notches/cameras */}

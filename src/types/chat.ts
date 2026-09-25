@@ -40,4 +40,5 @@ export interface ChatState {
   background: BackgroundMode;
   customBackgroundColor?: string;
   settings: Settings;
+  zoom: number;
 }

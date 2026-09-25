@@ -14,6 +14,7 @@ interface ChatContextType {
   setAppStyle: (appStyle: AppStyle) => void;
   setDevice: (device: Device) => void;
   setBackground: (background: BackgroundMode, color?: string) => void;
+  setZoom: (zoom: number) => void;
   resetState: () => void;
   isSaving: boolean;
 }
@@ -90,6 +91,10 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }));
   }, []);
 
+  const setZoom = useCallback((zoom: number) => {
+    setState((prev) => ({ ...prev, zoom }));
+  }, []);
+
   const resetState = useCallback(() => {
     if (confirm('Start over? This will clear your current conversation and customization.')) {
       clearState();
@@ -109,6 +114,7 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setAppStyle,
     setDevice,
     setBackground,
+    setZoom,
     resetState,
     isSaving,
   };

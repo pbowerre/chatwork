@@ -9,7 +9,7 @@ import { exportAsImage } from './utils/exportImage';
 import { Check, User, Settings, HelpCircle, Undo, Redo, Download, ChevronDown, ChevronUp, MonitorPlay, Loader2 } from 'lucide-react';
 
 function App() {
-  const { isSaving, state, setPlatform } = useChatState();
+  const { isSaving, state, setPlatform, setAppStyle, resetState } = useChatState();
   const [profileOpen, setProfileOpen] = useState(true);
   const [messagesOpen, setMessagesOpen] = useState(true);
   const [isExporting, setIsExporting] = useState(false);
@@ -69,7 +69,10 @@ function App() {
             </button>
           </div>
 
-          <button className="hidden md:block px-4 py-2 text-sm font-medium hover:bg-white/5 rounded-lg border border-white/10 transition-colors shrink-0">
+          <button 
+            onClick={resetState}
+            className="hidden md:block px-4 py-2 text-sm font-medium hover:bg-white/5 rounded-lg border border-white/10 transition-colors shrink-0"
+          >
             Reset
           </button>
           
@@ -158,10 +161,13 @@ function App() {
           <div className="pt-6 flex justify-center z-20 w-full shrink-0 relative">
             <div className="flex p-1 bg-[#111524] border border-white/10 rounded-full shadow-2xl">
               <button
-                onClick={() => setPlatform('ios')}
+                onClick={() => {
+                  setPlatform('ios');
+                  setAppStyle('imessage');
+                }}
                 className={`flex items-center gap-2 px-6 py-2 rounded-full text-xs font-semibold transition-all ${
                   state.platform === 'ios'
-                    ? 'bg-[#1e243b] text-white shadow-sm ring-1 ring-white/10'
+                    ? 'bg-teal-500/20 text-teal-400 shadow-sm ring-1 ring-teal-500/50'
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
@@ -169,10 +175,13 @@ function App() {
                 iPhone
               </button>
               <button
-                onClick={() => setPlatform('android')}
+                onClick={() => {
+                  setPlatform('android');
+                  setAppStyle('whatsapp');
+                }}
                 className={`flex items-center gap-2 px-6 py-2 rounded-full text-xs font-semibold transition-all ${
                   state.platform === 'android'
-                    ? 'bg-[#1e243b] text-white shadow-sm ring-1 ring-white/10'
+                    ? 'bg-teal-500/20 text-teal-400 shadow-sm ring-1 ring-teal-500/50'
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
