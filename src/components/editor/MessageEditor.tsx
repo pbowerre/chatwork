@@ -7,6 +7,7 @@ export default function MessageEditor() {
   const { state, addMessage, deleteMessage } = useChatState();
   const [newMessageText, setNewMessageText] = useState('');
   const [sender, setSender] = useState<'me' | 'them'>('them');
+  const [messageTime, setMessageTime] = useState(() => new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
 
   const handleAddText = () => {
     if (!newMessageText.trim()) return;
@@ -14,7 +15,7 @@ export default function MessageEditor() {
       sender,
       text: newMessageText,
       status: sender === 'me' ? 'delivered' : 'none',
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      timestamp: messageTime || new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     });
     setNewMessageText('');
   };
@@ -28,7 +29,7 @@ export default function MessageEditor() {
           sender,
           image: event.target?.result as string,
           status: sender === 'me' ? 'delivered' : 'none',
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          timestamp: messageTime || new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         });
       };
       reader.readAsDataURL(file);
@@ -76,6 +77,20 @@ export default function MessageEditor() {
            >
              Me
            </button>
+        </div>
+      </div>
+
+      {/* Time Input */}
+      <div className="space-y-1.5">
+        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest pl-1">Time</label>
+        <div className="bg-[#0b0f1a] rounded-xl border border-white/5 p-1.5 shadow-inner">
+          <input
+            type="text"
+            value={messageTime}
+            onChange={(e) => setMessageTime(e.target.value)}
+            placeholder="e.g. 9:41 AM, Yesterday..."
+            className="w-full bg-transparent text-sm text-slate-200 px-2 py-1 outline-none placeholder:text-slate-600"
+          />
         </div>
       </div>
 
