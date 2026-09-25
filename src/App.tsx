@@ -9,7 +9,7 @@ import { exportAsImage } from './utils/exportImage';
 import { Check, User, Settings, HelpCircle, Undo, Redo, Download, ChevronDown, ChevronUp, MonitorPlay, Loader2 } from 'lucide-react';
 
 function App() {
-  const { isSaving, state, setPlatform, setAppStyle, resetState } = useChatState();
+  const { isSaving, state, setPlatform, resetState } = useChatState();
   const [profileOpen, setProfileOpen] = useState(true);
   const [messagesOpen, setMessagesOpen] = useState(true);
   const [isExporting, setIsExporting] = useState(false);
